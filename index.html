@@ -944,11 +944,11 @@
             <a href="#" class="btn-download" id="downloadLink" data-key="download_btn"><i class="fas fa-download"></i> تحميل النسخة التجريبية المجانية (7 أيام)</a>
         </div>
         
-        <!-- زر عرض الزوار (مكانه الصحيح) -->
+        <!-- زر عرض الزوار -->
         <div style="text-align: center; margin: 20px auto;">
-            <button id="visitorsBtn" style="background: #2a5a2a; color: #f5e6b8; border: none; padding: 8px 20px; border-radius: 30px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                <i class="fas fa-globe-asia"></i> 🌍 EasyLand Visitors
-            </button>
+            <button id="visitorsBtn" style="background: #2a5a2a; color: #f5e6b8; border: none; padding: 8px 20px; border-radius: 30px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);" onclick="document.getElementById('visitorsModal').style.display='flex'">
+            <i class="fas fa-globe-asia"></i> 🌍 EasyLand Visitors
+			</button>
         </div>
     </div>
 
@@ -1571,17 +1571,18 @@
         updateLanguage('ar');
     </script>
     <!-- Visitors Statistics Popup Modal -->
+<!-- نافذة الزوار المنبثقة -->
 <div id="visitorsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; justify-content: center; align-items: center;">
     <div style="background: #eef3ee; border-radius: 25px; max-width: 650px; width: 90%; text-align: center; padding: 20px; position: relative; border-bottom: 4px solid #c9a03d; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
         
-        <!-- Close button -->
-        <button id="closeModalBtn" style="position: absolute; top: 10px; left: 15px; background: #2a5a2a; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; transition: 0.2s;">&times;</button>
+        <!-- زر الإغلاق -->
+        <button onclick="document.getElementById('visitorsModal').style.display='none'" style="position: absolute; top: 10px; left: 15px; background: #2a5a2a; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; transition: 0.2s;">&times;</button>
         
         <h3 style="color: #2a5a2a; margin-bottom: 15px; margin-top: 5px;">
             <i class="fas fa-chart-line"></i> EasyLand Visitors Statistics
         </h3>
         
-        <!-- Flag Counter -->
+        <!-- العداد -->
         <a href="https://www.flagcounter.me/details/hwe" target="_blank" style="display: inline-block;">
             <img src="https://www.flagcounter.me/hwe/" alt="Flag Counter" style="max-width: 100%; height: auto; border-radius: 12px;">
         </a>
@@ -1593,23 +1594,16 @@
 </div>
 
 <script>
-    const btn = document.getElementById('visitorsBtn');
-    const modal = document.getElementById('visitorsModal');
-    const closeBtn = document.getElementById('closeModalBtn');
-
-    if (btn && modal && closeBtn) {
-        btn.onclick = () => {
-            modal.style.display = 'flex';
-        };
-        closeBtn.onclick = () => {
+    // إغلاق النافذة عند الضغط خارجها (اختياري)
+    window.onclick = function(event) {
+        var modal = document.getElementById('visitorsModal');
+        if (event.target === modal) {
             modal.style.display = 'none';
-        };
-        window.onclick = (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        };
-    }
+        }
+    };
 </script>
+
+</body>
+</html>
 </body>
 </html>
