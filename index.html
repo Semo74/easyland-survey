@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -943,15 +943,15 @@
         <div style="text-align: center; margin: 40px 0;">
             <a href="#" class="btn-download" id="downloadLink" data-key="download_btn"><i class="fas fa-download"></i> تحميل النسخة التجريبية المجانية (7 أيام)</a>
         </div>
+        
+        <!-- زر عرض الزوار (مكانه الصحيح) -->
+        <div style="text-align: center; margin: 20px auto;">
+            <button id="visitorsBtn" style="background: #2a5a2a; color: #f5e6b8; border: none; padding: 8px 20px; border-radius: 30px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <i class="fas fa-globe-asia"></i> 🌍 EasyLand Visitors
+            </button>
+        </div>
     </div>
 
-
-    <!-- زر عرض الزوار -->
-    <div style="text-align: center; margin: 20px auto;">
-         <button id="visitorsBtn" style="background: #2a5a2a; color: #f5e6b8; border: none; padding: 8px 20px; border-radius: 30px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-             <i class="fas fa-globe-asia"></i> 🌍 زوار EasyLand
-         </button>
-    </div>
 
     <!-- Modal for program parts -->
     <div id="partModal" class="modal">
@@ -967,8 +967,8 @@
                 <h3><i class="fas fa-user-cog"></i> <span data-key="developer_title">المصمم والمطور</span></h3>
                 <p><i class="fas fa-user-tie"></i> <strong data-key="developer_name">المهندس: وسيم محمد علي</strong></p>
                 <p><i class="fas fa-map-marker-alt"></i> <span data-key="country">الجمهورية العربية السورية (+963)</span></p>
-				<p><i class="fas fa-phone-alt"></i> <span dir="ltr"> 0955 770 252</span> | <i class="fab fa-whatsapp"></i> <a href="https://wa.me/963934364074" target="_blank" class="whatsapp-link"><span dir="ltr"> 0963 364 074</span></a></p>
-				<p><i class="fas fa-envelope"></i> <a href="mailto:semo.sy.land@gmail.com" style="color:#c9a03d;">semo.sy.land@gmail.com</a></p>
+                <p><i class="fas fa-phone-alt"></i> <span dir="ltr"> 0955 770 252</span> | <i class="fab fa-whatsapp"></i> <a href="https://wa.me/963934364074" target="_blank" class="whatsapp-link"><span dir="ltr"> 0963 364 074</span></a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:semo.sy.land@gmail.com" style="color:#c9a03d;">semo.sy.land@gmail.com</a></p>
             </div>
             <div class="footer-bottom">
                 <p>© 2026 EasyLand Survey Solution — <span data-key="footer_rights">جميع الحقوق محفوظة</span></p>
@@ -1000,7 +1000,7 @@
                 topo_note: "جميع عناصر الرسم المساحي متوافقة مع دفتر الرموز والمصطلحات الطبوغرافية المعتمدة لمشاريع المسح الطبوغرافي والمخططات التنظيمية الرسمية",
                 tab_buildings: "المباني والمنشآت", tab_infra: "البنية التحتية", tab_nature: "المعالم الطبيعية", tab_boundaries: "الحدود والملكيات", tab_tools: "الأدوات المساحية",
                 compat_title: "💻 التوافق والإصدارات", free_version: "نسخة تجريبية مجانية", free_days: "7 أيام - تجربة كاملة المميزات",
-				civil_versions: "إصدارات",
+                civil_versions: "إصدارات",
                 install_title: "⚙️ آلية تنصيب البرنامج",
                 step1_title: "📥 تحميل الملف", step1_desc: "قم بتحميل ملف التثبيت من الرابط المخصص",
                 step2_title: "🎯 تشغيل البرنامج", step2_desc: "افتح برنامج Land Desktop Companion أو Civil 3D",
@@ -1016,8 +1016,8 @@
                 coming_soon: "🚀 سيتم إضافة فيديو تعليمي قريباً يوضح الأوامر وكيفية التشغيل",
                 final_message1: "نرحب بكل أسئلتكم، استفساراتكم، اقتراحاتكم، بل وحتى نقدكم البناء. تواصلكم هو ما يطور هذا البرنامج.",
                 final_message2: "أتمنى أن أكون قدمت عملاً يرقى لمستوى طموحات كل من يستخدم هذا البرنامج، سواء كان مهندساً، فنيًا، أو عاملًا في هذا المجال ويملك شغف المعرفة.",
-				final_title: "كلمة أخيرة",
-				read_more: "اقرأ المزيد...",
+                final_title: "كلمة أخيرة",
+                read_more: "اقرأ المزيد...",
             },
             en: {
                 nav_home: "Home", nav_topo: "Topographic", nav_install: "Installation", nav_parts: "Program Parts", nav_contact: "Contact",
@@ -1040,7 +1040,7 @@
                 tab_buildings: "Buildings", tab_infra: "Infrastructure", tab_nature: "Natural Features", tab_boundaries: "Boundaries", tab_tools: "Survey Tools",
                 compat_title: "💻 Compatibility & Versions", free_version: "Free Trial Version", free_days: "7 Days - Full features trial",
                 civil_versions: "Versions",
-				install_title: "⚙️ Installation Guide",
+                install_title: "⚙️ Installation Guide",
                 step1_title: "📥 Download", step1_desc: "Download the installation file from the link",
                 step2_title: "🎯 Run Program", step2_desc: "Open Land Desktop Companion or Civil 3D",
                 step3_title: "⌨️ Load Interface", step3_desc: "Type command: cuiload (for Land) or cuixload (for Civil 3D) then select EasyLand.cui",
@@ -1048,7 +1048,7 @@
                 step5_title: "📂 Training Files", step5_desc: "Go to C:\\Program Files\\EasyLand-LDT9 or C:\\Program Files\\EasyLand-C3D to find the Reference folder and a compressed file containing training files",
                 parts_title: "🧩 Main Program Components", parts_sub: "Click on any component to read detailed explanation",
                 contact_title: "📞 Contact Technical Support",
-				contact_name: "Full Name",
+                contact_name: "Full Name",
                 contact_email: "Email Address",
                 contact_msg: "Your inquiry or support request",
                 send_btn: "Send Message", download_btn: "Download Free Trial (7 Days)",
@@ -1058,8 +1058,8 @@
                 coming_soon: "🚀 Educational video explaining commands and usage will be added soon",
                 final_message1: "We welcome all your questions, inquiries, suggestions, and even your constructive criticism. Your communication is what develops this program.",
                 final_message2: "I hope that I have provided work that meets the aspirations of everyone who uses this program, whether an engineer, technician, or worker in this field who has a passion for knowledge.",
-				final_title: "Final Word",
-				read_more: "Read more...",
+                final_title: "Final Word",
+                read_more: "Read more...",
             }
         };
 
@@ -1593,7 +1593,6 @@
 </div>
 
 <script>
-    // Show modal when button is clicked
     const btn = document.getElementById('visitorsBtn');
     const modal = document.getElementById('visitorsModal');
     const closeBtn = document.getElementById('closeModalBtn');
