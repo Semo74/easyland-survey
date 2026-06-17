@@ -930,11 +930,10 @@
         <!-- نموذج التواصل -->
         <div class="section-title-wrapper" id="contact">
             <h2 class="section-title" data-key="contact_title">📞 تواصل مع فريق الدعم الفني</h2>
-        </div>
-        <form class="contact-form" id="contactForm">
-            <div class="form-group"><input type="text" id="name" data-key-placeholder="contact_name" placeholder="الاسم الكامل"></div>
-            <div class="form-group"><input type="email" id="email" data-key-placeholder="contact_email" placeholder="البريد الإلكتروني"></div>
-            <div class="form-group"><textarea rows="4" id="message" data-key-placeholder="contact_msg" placeholder="استفسارك أو طلب دعم فني"></textarea></div>
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xnjyylgo" method="POST">
+            <div class="form-group"><input type="text" id="name" name="name" data-key-placeholder="contact_name" placeholder="الاسم الكامل"></div>
+            <div class="form-group"><input type="email" id="email" name="email" data-key-placeholder="contact_email" placeholder="البريد الإلكتروني"></div>
+            <div class="form-group"><textarea rows="4" id="message" name="message" data-key-placeholder="contact_msg" placeholder="استفسارك أو طلب دعم فني"></textarea></div>
             <button type="submit" class="btn-primary" data-key="send_btn">إرسال الرسالة</button>
             <p id="formFeedback" style="margin-top:15px; text-align:center;"></p>
         </form>
@@ -1546,17 +1545,18 @@
             }
         });
 
+        /*
         document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const msg = currentLang === 'ar' 
-                ? "✓ تم استلام رسالتك، سيتواصل معك المهندس وسيم محمد علي قريباً" 
-                : "✓ Message received, Engineer Wasim Mohamad Ali will contact you soon";
-            document.getElementById('formFeedback').innerHTML = msg;
-            document.getElementById('formFeedback').style.color = "#c9a03d";
-            e.target.reset();
-            setTimeout(() => document.getElementById('formFeedback').innerHTML = "", 5000);
-        });
-
+                    e.preventDefault();
+                    const msg = currentLang === 'ar' 
+                        ? "✓ تم استلام رسالتك، سيتواصل معك المهندس وسيم محمد علي قريباً" 
+                        : "✓ Message received, Engineer Wasim Mohamad Ali will contact you soon";
+                    document.getElementById('formFeedback').innerHTML = msg;
+                    document.getElementById('formFeedback').style.color = "#c9a03d";
+                    e.target.reset();
+                    setTimeout(() => document.getElementById('formFeedback').innerHTML = "", 5000);
+                });
+        */
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
