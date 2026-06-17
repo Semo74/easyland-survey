@@ -1557,12 +1557,6 @@
             setTimeout(() => document.getElementById('formFeedback').innerHTML = "", 5000);
         });
 
-        document.getElementById('downloadLink').addEventListener('click', (e) => {
-            e.preventDefault();
-            alert(currentLang === 'ar' 
-                ? "📥 سيتم توجيهك لتحميل النسخة التجريبية قريباً. للتواصل المباشر: 0934 364 074 واتساب"
-                : "📥 You will be redirected to download the trial version soon. For direct contact: 0934 364 074 WhatsApp");
-        });
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
