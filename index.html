@@ -893,6 +893,89 @@
             </p>
         </div>
 
+
+
+
+        <!-- ✅ ضع معرض الصور هنا -->
+        <div class="section-title-wrapper">
+            <h2 class="section-title" id="gallery">🖼️ معرض صور البرنامج</h2>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 30px 0; padding: 20px; background: #f9f9f9; border-radius: 25px;" id="galleryGrid">
+            <!-- سيتم إنشاء الصور بواسطة JavaScript -->
+        </div>
+
+        <!-- عنصر Lightbox (نافذة تكبير الصور) -->
+        <div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; justify-content: center; align-items: center; cursor: pointer;" onclick="closeLightbox()">
+            <img id="lightbox-img" src="" style="max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 0 50px rgba(0,0,0,0.8);">
+            <button onclick="event.stopPropagation(); closeLightbox();" style="position: absolute; top: 20px; right: 30px; background: #c9a03d; color: #1a2a1f; border: none; width: 45px; height: 45px; border-radius: 50%; font-size: 1.8rem; cursor: pointer; transition: 0.2s;">&times;</button>
+            <button onclick="event.stopPropagation(); navigateGallery(-1);" style="position: absolute; top: 50%; left: 20px; background: rgba(255,255,255,0.2); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 2rem; cursor: pointer; transition: 0.2s; transform: translateY(-50%);">&#10094;</button>
+            <button onclick="event.stopPropagation(); navigateGallery(1);" style="position: absolute; top: 50%; right: 20px; background: rgba(255,255,255,0.2); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 2rem; cursor: pointer; transition: 0.2s; transform: translateY(-50%);">&#10095;</button>
+            <div id="imageCounter" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); color: white; font-size: 1rem; background: rgba(0,0,0,0.5); padding: 8px 20px; border-radius: 30px;"></div>
+        </div>
+
+        <script>
+        // توليد الصور تلقائياً
+        const totalImages = 20;
+        const galleryGrid = document.getElementById('galleryGrid');
+        let currentImageIndex = 0;
+        const imageNames = [];
+
+        for (let i = 1; i <= totalImages; i++) {
+            const imageName = i + '.jpg';
+            imageNames.push(imageName);
+            
+            const card = document.createElement('div');
+            card.style.cssText = 'background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: 0.3s; cursor: pointer;';
+            card.onclick = function() { openLightbox(i - 1); };
+            
+            card.innerHTML = `
+                <img src="${imageName}" alt="صورة ${i}" style="width: 100%; height: 180px; object-fit: cover; transition: 0.3s; display: block;">
+                <div style="padding: 12px; text-align: center;">
+                    <p style="font-weight: 600; color: #2a5a2a; margin: 0;">صورة ${i}</p>
+                </div>
+            `;
+            
+            galleryGrid.appendChild(card);
+        }
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            document.getElementById('lightbox-img').src = imageNames[currentImageIndex];
+            document.getElementById('lightbox').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            updateCounter();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function navigateGallery(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = imageNames.length - 1;
+            if (currentImageIndex >= imageNames.length) currentImageIndex = 0;
+            document.getElementById('lightbox-img').src = imageNames[currentImageIndex];
+            updateCounter();
+        }
+
+        function updateCounter() {
+            document.getElementById('imageCounter').textContent = (currentImageIndex + 1) + ' / ' + imageNames.length;
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateGallery(-1);
+            if (e.key === 'ArrowRight') navigateGallery(1);
+        });
+        </script>
+
+
+
+
+
+
         <!-- التوافق مع البرامج -->
         <div class="section-title-wrapper">
             <h2 class="section-title" data-key="compat_title">💻 التوافق والإصدارات</h2>
