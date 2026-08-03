@@ -996,7 +996,7 @@
 
 
      
-		<!-- كلمة أخيرة قبل نموذج التواصل -->
+        <!-- كلمة أخيرة قبل نموذج التواصل -->
         <div class="section-title-wrapper">
             <h2 class="section-title">💬 <span data-key="final_title">كلمة أخيرة</span></h2>
         </div>
@@ -1010,11 +1010,11 @@
                 <span data-key="final_message2">أتمنى أن أكون قدمت عملاً يرقى لمستوى طموحات كل من يستخدم هذا البرنامج، سواء كان مهندساً، فنيًا، أو عاملًا في هذا المجال ويملك شغف المعرفة.</span>
             </p>
         </div>
-		
-		
-		
-		
-		<!-- نموذج التواصل -->
+        
+        
+        
+        
+        <!-- نموذج التواصل -->
         <div class="section-title-wrapper" id="contact">
             <h2 class="section-title" data-key="contact_title">📞 تواصل مع فريق الدعم الفني</h2>
         <form class="contact-form" id="contactForm" action="https://formspree.io/f/xnjyylgo" method="POST">
@@ -1026,7 +1026,7 @@
         </form>
 
 
-		
+        
         <!-- قسم تحميل النسخة التجريبية -->
         <div style="text-align: center; margin: 40px 0;">
             
@@ -1058,19 +1058,24 @@
                         For Civil3D 2015 – up to Civil3D 2024
                     </p>
                 </div>
-				
+                
             </div>
-			
+            
 
-            <!-- زر المراجع والملفات -->
-            <div style="margin-top: 25px;">
-                <a href="Easy Land.pdf" download style="background: #2a5a2a; color: #f5e6b8; padding: 12px 25px; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; border: 1px solid #c9a03d;">
-                    <i class="fas fa-file-pdf"></i> 📥 References
-                </a>
+           <!-- ✅ ملاحظة حول النسخة التجريبية (تُضاف هنا) -->
+            <div style="background: #f0f5f0; border-radius: 20px; padding: 20px 30px; margin: 30px 0; border-right: 4px solid #c9a03d; border-left: 4px solid #c9a03d;           text-align: center;">
+                 <p style="font-size: 1rem; color: #2a5a2a; margin-bottom: 8px; font-weight: 500;">
+                     <i class="fas fa-info-circle" style="color: #c9a03d;"></i> 
+                     <span data-key="trial_note1">📌 ملاحظة: النسخة التجريبية مخصصة للقسم الطبوغرافي، المقاطع، وأدوات الطرق.</span>
+                 </p>
+                 <p style="font-size: 1rem; color: #2a5a2a; font-weight: 500;">
+                     <i class="fas fa-phone-alt" style="color: #c9a03d;"></i> 
+                    <span data-key="trial_note2">📞 يمكن طلب النسخة الطبوغرافية أو الباكيج الكامل عبر التواصل مع فريق الدعم.</span>
+                 </p>
             </div>
 
         </div>
-		
+        
         <!-- زر عرض الزوار -->
         <div style="text-align: center; margin: 20px auto;">
             <button id="visitorsBtn" style="background: #2a5a2a; color: #f5e6b8; border: none; padding: 8px 20px; border-radius: 30px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);" onclick="document.getElementById('visitorsModal').style.display='flex'">
@@ -1144,9 +1149,11 @@
                 final_message1: "نرحب بكل أسئلتكم، استفساراتكم، اقتراحاتكم، بل وحتى نقدكم البناء. تواصلكم هو ما يطور هذا البرنامج.",
                 final_message2: "أتمنى أن أكون قدمت عملاً يرقى لمستوى طموحات كل من يستخدم هذا البرنامج، سواء كان مهندساً، فنيًا، أو عاملًا في هذا المجال ويملك شغف المعرفة.",
                 final_title: "كلمة أخيرة",
-				gallery_title: "معرض صور البرنامج",
+                gallery_title: "معرض صور البرنامج",
                 read_more: "اقرأ المزيد...",
-				trial_title: "تحميل النسخة التجريبية المجانية (7 أيام)",
+                trial_title: "تحميل النسخة التجريبية المجانية (7 أيام)",
+				trial_note1: "📌 ملاحظة: النسخة التجريبية مخصصة للقسم الطبوغرافي، المقاطع، وأدوات الطرق.",
+                trial_note2: "📞 يمكن طلب النسخة الطبوغرافية أو الباكيج الكامل عبر التواصل مع فريق الدعم.",
             },
             en: {
                 nav_home: "Home", nav_topo: "Topographic", nav_install: "Installation", nav_parts: "Program Parts", nav_contact: "Contact",
@@ -1188,9 +1195,11 @@
                 final_message1: "We welcome all your questions, inquiries, suggestions, and even your constructive criticism. Your communication is what develops this program.",
                 final_message2: "I hope that I have provided work that meets the aspirations of everyone who uses this program, whether an engineer, technician, or worker in this field who has a passion for knowledge.",
                 final_title: "Final Word",
-				gallery_title: "Program Image Gallery",
+                gallery_title: "Program Image Gallery",
                 read_more: "Read more...",
-				trial_title: "Download Your Free 7-Day Trial",
+                trial_title: "Download Your Free 7-Day Trial",
+				trial_note1: "📌 Note: The trial version is dedicated to the topographic section, cross-sections, and road tools.",
+                trial_note2: "📞 You can request the topographic version or the full package by contacting our support team.",
             }
         };
 
@@ -1314,10 +1323,10 @@
                     summary: "رسم وتحليل مقاطع الطرق وفق نقاط الرفع المساحي، حساب كميات الحفر والردم.",
                     features: [
                         "• برنامج Road Line Pro لدراسة الطرق الزراعية والمحلية وطرق البلديات",
-                        "• رسم المقطع الطولي والمقاطع العرضية للطرق",
                         "• حساب كميات الحفر والردم بجدول منظم",
                         "• إمكانية اقتراح أماكن الحبسات البيتونية والجدران الكتلية والمسلحة",
-                        "• أدوات متقدمة للتعامل مع المقاطع الطولية والعرضية"
+                        "• إمكانية إدراج الجدران الاستنادية للمقاطع العرضية وفق مقياس الرسم"
+                        "• أدوات متقدمة للتعامل مع المقاطع الطولية والعرضية، مثل تحويل البروفايل والسوبر من الكاد إلى السيفل بطرق متقدمة"
                     ],
                     howToUse: `<div class="video-placeholder" style="text-align:center; padding:15px; background:#f0f5f0; border-radius:15px;">
                         <i class="fab fa-youtube" style="font-size:2rem; color:#c9a03d;"></i>
@@ -1336,8 +1345,9 @@
                         "• برنامج Gas Line Pro لرسم المقطع الطولي لخطوط الغاز أو النفط",
                         "• دراسة تشوهات الخزانات النفطية أو خزانات المياه وفق المعايير الدولية المعتمدة",
                         "• برنامج حساب حجوم الخزانات ودراسة الشرائح الأفقية (Tank Slices)",
-                        "• تحليل التشوهات للخزانات المعدنية الأسطوانية الرأسية",
-                        "• إمكانية التحكم الكامل بالعناصر التي تظهر أسفل المقطع العرضي (Profile Bands)"
+                        "• حساب حجوم الأعمال الترابية والردميات (Earthwork & Backfill Volumes)",
+                        "• إمكانية التحكم الكامل بالعناصر التي تظهر أسفل المقطع الطولي (Profile Bands)"
+
                     ],
                     howToUse: `<div class="video-placeholder" style="text-align:center; padding:15px; background:#f0f5f0; border-radius:15px;">
                         <i class="fab fa-youtube" style="font-size:2rem; color:#c9a03d;"></i>
@@ -1390,9 +1400,9 @@
                 }
             ],
             en: [
-                { 
-                    icon: "fa-map", 
-                    title: "🗺️ Topographic Section", 
+                {
+                    icon: "fa-map",
+                    title: "🗺️ Topographic Section",
                     summary: "Complete surveying drawing tools according to recognized topographic symbols and terminology.",
                     features: [
                         "• Complete surveying drawing tools according to recognized topographic symbols and terminology",
@@ -1415,9 +1425,9 @@
                         </div>
                     </div>`
                 },
-                { 
-                    icon: "fa-building", 
-                    title: "🏗️ Structural Programs", 
+                {
+                    icon: "fa-building",
+                    title: "🏗️ Structural Programs",
                     summary: "Retaining wall design, reinforcement details, road pavement layer design.",
                     features: [
                         "• Retaining Wall program for design and equilibrium analysis (gravity and reinforced walls) with reinforcement details output",
@@ -1435,16 +1445,16 @@
                         </div>
                     </div>`
                 },
-                { 
-                    icon: "fa-road", 
-                    title: "🛣️ Road Solutions", 
+                {
+                    icon: "fa-road",
+                    title: "🛣️ Road Solutions",
                     summary: "Road cross-section analysis based on survey points, cut and fill quantity calculations.",
                     features: [
-                        "• Road Line Pro for agricultural, local, and municipal road studies",
-                        "• Profile and cross-section drawing for roads",
+                        "• Road Line Pro for studying agricultural, local, and municipal roads",
                         "• Cut and fill quantity calculations in organized tables",
-                        "• Ability to suggest concrete block and wall locations",
-                        "• Advanced tools for longitudinal and cross sections"
+                        "• Ability to suggest concrete block and retaining wall locations",
+                        "• Ability to insert retaining walls for cross-sections according to drawing scale",
+                        "• Advanced tools for handling longitudinal and cross sections, such as converting profiles and superelevation from CAD to Civil 3D using advanced methods"
                     ],
                     howToUse: `<div class="video-placeholder" style="text-align:center; padding:15px; background:#f0f5f0; border-radius:15px;">
                         <i class="fab fa-youtube" style="font-size:2rem; color:#c9a03d;"></i>
@@ -1455,16 +1465,16 @@
                         </div>
                     </div>`
                 },
-                { 
-                    icon: "fa-oil-can", 
-                    title: "⛽ Gas Lines & Tank Analysis", 
+                {
+                    icon: "fa-oil-can",
+                    title: "⛽ Gas Lines & Tank Analysis",
                     summary: "Gas/oil pipeline profile drawing, cylindrical tank deformation analysis.",
                     features: [
                         "• Gas Line Pro for gas/oil pipeline profile drawing",
                         "• Cylindrical tank deformation analysis according to international standards",
                         "• Tank volume calculation and horizontal slice extraction (Tank Slices)",
-                        "• Deformation analysis for vertical cylindrical metal tanks",
-                        "• Full control over profile bands display elements"
+                        "• Earthwork and backfill volume calculations",
+                        "• Full control over elements displayed below the longitudinal profile (Profile Bands)"
                     ],
                     howToUse: `<div class="video-placeholder" style="text-align:center; padding:15px; background:#f0f5f0; border-radius:15px;">
                         <i class="fab fa-youtube" style="font-size:2rem; color:#c9a03d;"></i>
@@ -1475,9 +1485,9 @@
                         </div>
                     </div>`
                 },
-                { 
-                    icon: "fa-water", 
-                    title: "💧 Water & Sewage Design", 
+                {
+                    icon: "fa-water",
+                    title: "💧 Water & Sewage Design",
                     summary: "Sewer line analysis, quantity tables, hydraulic design for open irrigation channels.",
                     features: [
                         "• Sewer Line Pro for sewage line study according to approved standards",
@@ -1496,9 +1506,9 @@
                         </div>
                     </div>`
                 },
-                { 
-                    icon: "fa-folder-open", 
-                    title: "📚 Training Files & Libraries", 
+                {
+                    icon: "fa-folder-open",
+                    title: "📚 Training Files & Libraries",
                     summary: "Comprehensive material library, training files, projects for skill development.",
                     features: [
                         "• References folder and compressed file with numerous training files and data",
@@ -1697,37 +1707,37 @@
         updateLanguage('ar');
     </script>
     <!-- Visitors Statistics Popup Modal -->
-<!-- نافذة الزوار المنبثقة -->
-<div id="visitorsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; justify-content: center; align-items: center;">
-    <div style="background: #eef3ee; border-radius: 25px; max-width: 650px; width: 90%; text-align: center; padding: 20px; position: relative; border-bottom: 4px solid #c9a03d; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-        
-        <!-- زر الإغلاق -->
-        <button onclick="document.getElementById('visitorsModal').style.display='none'" style="position: absolute; top: 10px; left: 15px; background: #2a5a2a; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; transition: 0.2s;">&times;</button>
-        
-        <h3 style="color: #2a5a2a; margin-bottom: 15px; margin-top: 5px;">
-            <i class="fas fa-chart-line"></i> EasyLand Visitors Statistics
-        </h3>
-        
-        <!-- العداد -->
-        <a href="https://www.flagcounter.me/details/hwe" target="_blank" style="display: inline-block;">
-            <img src="https://www.flagcounter.me/hwe/" alt="Flag Counter" style="max-width: 100%; height: auto; border-radius: 12px;">
-        </a>
-        
-        <p style="font-size: 0.75rem; color: #666; margin-top: 15px;">
-            <i class="fas fa-mouse-pointer"></i> Click on the counter to see detailed statistics
-        </p>
+    <!-- نافذة الزوار المنبثقة -->
+    <div id="visitorsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; justify-content: center; align-items: center;">
+        <div style="background: #eef3ee; border-radius: 25px; max-width: 650px; width: 90%; text-align: center; padding: 20px; position: relative; border-bottom: 4px solid #c9a03d; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            
+            <!-- زر الإغلاق -->
+            <button onclick="document.getElementById('visitorsModal').style.display='none'" style="position: absolute; top: 10px; left: 15px; background: #2a5a2a; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; transition: 0.2s;">&times;</button>
+            
+            <h3 style="color: #2a5a2a; margin-bottom: 15px; margin-top: 5px;">
+                <i class="fas fa-chart-line"></i> EasyLand Visitors Statistics
+            </h3>
+            
+            <!-- العداد -->
+            <a href="https://www.flagcounter.me/details/hwe" target="_blank" style="display: inline-block;">
+                <img src="https://www.flagcounter.me/hwe/" alt="Flag Counter" style="max-width: 100%; height: auto; border-radius: 12px;">
+            </a>
+            
+            <p style="font-size: 0.75rem; color: #666; margin-top: 15px;">
+                <i class="fas fa-mouse-pointer"></i> Click on the counter to see detailed statistics
+            </p>
+        </div>
     </div>
-</div>
 
-<script>
-    // (إغلاق النافذة عند الضغط خارجها (اختياري
-    window.onclick = function(event) {
-        var modal = document.getElementById('visitorsModal');
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    };
-</script>
+    <script>
+        // (إغلاق النافذة عند الضغط خارجها (اختياري
+        window.onclick = function(event) {
+            var modal = document.getElementById('visitorsModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
 
 </body>
 </html>
