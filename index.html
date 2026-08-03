@@ -1368,12 +1368,80 @@
                         "• برنامج Pipe Calculator للتصميم الهيدروليكي المتقدم لأي أنبوب",
                         "• برنامج Canal Design لدراسة وتصميم أقنية جر المياه (دراسة هيدروليكية متكاملة)",
                         "• برنامج Calculation Note لإعداد الدراسة الهيدرولوجية لمنطقة معينة",
+                        "• إمكانية اكتشاف تقاطعات المسارات تلقائياً"
                     ],
                     howToUse: `<div class="video-placeholder" style="text-align:center; padding:15px; background:#f0f5f0; border-radius:15px;">
                         <i class="fab fa-youtube" style="font-size:2rem; color:#c9a03d;"></i>
                         <p style="margin-top:10px;"><strong>📹 فيديو شرح تصميمات المياه والصرف</strong></p>
                         <p>سيتم إضافة فيديو تعليمي قريباً يوضح كيفية استخدام هذا الجزء.</p>
                         <div id="video_placeholder_water" style="margin-top:10px;">
+                            <!-- ضع هنا كود تضمين الفيديو من يوتيوب -->
+                        </div>
+                    </div>`
+                },
+                { 
+                    icon: "fa-tools", 
+                    title: "📘 قائمة الأدوات", 
+                    summary: "قائمة أدوات مهمة جداً لأعمال المساحة والمكتب الفني، مقسمة إلى Tools-1 و Tools-2.",
+                    features: [
+                        "• <strong>Tools-1</strong>",
+                        "  • Export- For Total Station: تصدير أي عنصر (نقاط كاد – لاند – سيفل – بلوكات مساحية – نقطة البرنامج) لملف احداثيات",
+                        "  • Redfine Civil Points: إعادة تعريف نقاط اللاند ديسكوب التي ليس لها قاعدة بيانات",
+                        "  • Redraw Control Points: تحويل نقاط المسح التي تملك توصيف معين إلى بلوكات اتريبيوت مساحية (رموز المثلثات-المراصد – الروبيرات)",
+                        "  • Read Geo File: قراءة ملفات برنامج الاوتو جيو (البرنامج الطبوغرافي القديم)",
+                        "  • Read Geo Points: قراءة نقاط الاحداثيات الخاصة ببرنامج الاوتو جيو وتحويلها لملف نقاط مساحية قابل المعالجة",
+                        "  • Easy Land Point: نقطة البرنامج المميزة والتي يمكن تكرارها ولها عدة استخدامات مهمة",
+                        "  • Export- Text To File: تصدير أي نصوص إلى ملف خارجي",
+                        "  • Export- Text To Coordinates (X, Y, Z): تصدير أي ارقام من الاوتوكاد لملف خارجي بتحويلها للإحداثيات",
+                        "  • Extract- Autocad Points: تحويل أي نقاط أوتوكاد لملف احداثيات خارجي",
+                        "  • Extract- Block Attribute: تحويل أي بلوكات عادية أو بلوكات مساحية لملف احداثيات خارجي",
+                        "  • Extract- Cogo From PolyLine: تصدير رؤوس أي بولي لاين لملف احداثيات خارجي",
+                        "  • Merge XY and Z File..Starnet: دمج ملف المناسيب مع ملف الاحداثيات (ملفات ستار نت)",
+                        "  • Move extra Cogo Points: تصفية نقاط المناسيب والتخفيف من تزاحمها في لوحة الرسم بنقل جزء منها إلى طبقة P-X",
+                        "  • Check duplicated Cogo Points: فحص نقاط المساحة وتنبيه المستخدم عن أماكن تواجد النقاط المكررة",
+                        "  • Points in mlayer: تحويل النقاط المساحية إلى رقم ومنسوب ووصف (كل عنصر بلون وطبقة)",
+                        "  • Match description: أداة رائعة لنسخ كود النقطة المساحية إلى نقاط أخرى",
+                        "  • Match elevation: أداة رائعة لنسخ منسوب النقطة المساحية إلى نقاط أخرى",
+                        "  • Block Legend: أداة تسمح بعمل جرد لكل بلوكات المشروع",
+                        "  • Smart Table Export: أداة لتحويل الجداول إلى ملف اكسل",
+                        "  • Zoom to point name: أداة للبحث عن أي نقطة مساحية بكتابة اسم النقطة",
+                        "  • Zoom to point number: أداة للبحث عن أي نقطة مساحية بكتابة رقم النقطة",
+                        "  • Zoom to Control point: أداة للبحث عن البلوكات المساحية بكتابة اسم المرصد",
+                        "  • Distance Control points: أداة لتحديد المسافة بين النقاط المثلثية والمراصد والروبيرات",
+                        "• <strong>Tools-2</strong>",
+                        "  • Direction and Distance: أداة لتحديد المسافة والاتجاه لأي خط",
+                        "  • Create Line by Grade: أداة تمكن المستخدم من انشاء خط مستقيم وفق ميل معين",
+                        "  • Create Line by Slope: أداة تمكن المستخدم من انشاء خط مستقيم وفق ميل معين",
+                        "  • Check Line: اختبار ميل أي خط مستقيم (وفق المقياس)",
+                        "  • Line Length: أداة تسمح بعمل تقرير سريع ومطبوع مباشرة على الشاشة",
+                        "  • Object Length: أداة لكتابة طول أي عنصر (بولي لاين – قوس – دائرة)",
+                        "  • Triangle Area by Length: برنامج صغير لحساب مساحة مثلث بمعلومية أطوال أضلاعه الثلاثة",
+                        "  • Summary of numbers: أداة لجمع أي أرقام يحددها المستخدم",
+                        "  • Total Area: برنامج لكتابة مساحة ومحيط أي شكل هندسي",
+                        "  • Check Area: برنامج يسمح بالكشف على أي انقطاع في أي مضلع",
+                        "  • Join: أمر تجميع عدة عناصر خطية بعنصر بولي لاين واحد",
+                        "  • Flip Polyline: برنامج مهمته عكس اتجاه أي خط مستقيم",
+                        "  • Centroid Polyline: برمجية مهمتها تحديد مركز توازن أي مضلع مغلق",
+                        "  • Object To Polyline: تحويل أي عنصر مثل قوس او دائرة إلى بولي لاين",
+                        "  • Divide Object: برنامج لتقسيم أي مضلع او دائرة او قوس لبولي لاين",
+                        "  • Export Polyline: برنامج لتصدير نقاط البولي لاين لملف احداثيات خارجي",
+                        "  • Export-EG Profile: برنامج مهم جدا لتحويل خط الأرض الطبيعية لأي مقطع طولي إلى ملف احداثيات خارجي",
+                        "  • Export-FG Profile: برنامج مهم جدا لتحويل خط التصميم لأي مقطع طولي إلى ملف احداثيات خارجي",
+                        "  • Making Grid: برنامج لرسم شبكة تربيعات وفق تباعدات يحددها المستخدم",
+                        "  • Insert Points On Grid: برنامج يستخدم لتثبيت نقاط كاد على أي شبكة تربيعات",
+                        "  • Arabic Text: برنامج للكتابة بالعربية بنمط خط XARAB الشهير",
+                        "  • Surround Text: برنامج مميز لصنع دوائر او مستطيلات حول النصوص والأرقام",
+                        "  • Auto dimensions: برنامج لكتابة الابعاد لأي خطوط او مضلع",
+                        "  • Insert North: برنامج لإدراج سهم الشمال في لوحة الرسم",
+                        "  • Insert Scale: برنامج لكتابة مقياس الرسم بالعربية أو الإنكليزية",
+                        "  • Reduce Levels to 0: برنامج لتحويل مناسيب أي عناصر للقيمة الصفرية",
+                        "  • Express Stakeout: برنامج متقدم جدا لتحويل أي احداثيات ديكارتية لإحداثيات قطبية"
+                    ],
+                    howToUse: `<div class="video-placeholder" style="text-align:center; padding:15px; background:#f0f5f0; border-radius:15px;">
+                        <i class="fab fa-youtube" style="font-size:2rem; color:#c9a03d;"></i>
+                        <p style="margin-top:10px;"><strong>📹 فيديو شرح الأدوات</strong></p>
+                        <p>سيتم إضافة فيديو تعليمي قريباً يوضح كيفية استخدام الأدوات.</p>
+                        <div id="video_placeholder_tools" style="margin-top:10px;">
                             <!-- ضع هنا كود تضمين الفيديو من يوتيوب -->
                         </div>
                     </div>`
@@ -1501,6 +1569,73 @@
                         <p style="margin-top:10px;"><strong>📹 Water & Sewage Design Tutorial Video</strong></p>
                         <p>A tutorial video will be added soon explaining how to use this section.</p>
                         <div id="video_placeholder_water_en" style="margin-top:10px;">
+                            <!-- Paste YouTube embed code here -->
+                        </div>
+                    </div>`
+                },
+                {
+                    icon: "fa-tools",
+                    title: "📘 Tools List",
+                    summary: "A list of highly important tools for surveying and technical office work, divided into Tools-1 and Tools-2.",
+                    features: [
+                        "• <strong>Tools-1</strong>",
+                        "  • Export- For Total Station: Export any element (CAD points – Land – Civil – Survey blocks – Program point) to a coordinates file",
+                        "  • Redfine Civil Points: Redefine Land Desktop points that have no database",
+                        "  • Redraw Control Points: Convert survey points with specific descriptions to survey attribute blocks (triangle symbols – observations – rovers)",
+                        "  • Read Geo File: Read files from the old AutoGeo program (old topographic program)",
+                        "  • Read Geo Points: Read coordinate points from AutoGeo and convert them to a survey points file",
+                        "  • Easy Land Point: The program's distinctive point which can be repeated and has several important uses",
+                        "  • Export- Text To File: Export any text to an external file",
+                        "  • Export- Text To Coordinates (X, Y, Z): Export any numbers from AutoCAD to an external file by converting them to coordinates",
+                        "  • Extract- Autocad Points: Convert any AutoCAD points to an external coordinates file",
+                        "  • Extract- Block Attribute: Convert any regular or survey blocks to an external coordinates file",
+                        "  • Extract- Cogo From PolyLine: Export vertices of any polyline to an external coordinates file",
+                        "  • Merge XY and Z File..Starnet: Merge the elevations file with the coordinates file (Starnet files)",
+                        "  • Move extra Cogo Points: Filter elevation points and reduce congestion in the drawing by moving some to layer P-X",
+                        "  • Check duplicated Cogo Points: Check survey points and alert the user about duplicated points",
+                        "  • Points in mlayer: Convert survey points to number, elevation, and description (each element in a separate color and layer)",
+                        "  • Match description: A great tool to copy the survey point code to other points",
+                        "  • Match elevation: A great tool to copy the survey point elevation to other points",
+                        "  • Block Legend: A tool to inventory all project blocks",
+                        "  • Smart Table Export: A tool to convert tables to an Excel file",
+                        "  • Zoom to point name: A tool to search for any survey point by entering its name",
+                        "  • Zoom to point number: A tool to search for any survey point by entering its number",
+                        "  • Zoom to Control point: A tool to search for survey blocks by entering the observation name",
+                        "  • Distance Control points: A tool to measure distances between triangulation points, observations, and rovers",
+                        "• <strong>Tools-2</strong>",
+                        "  • Direction and Distance: A tool to determine the distance and direction of any line",
+                        "  • Create Line by Grade: A tool to create a straight line according to a specific grade",
+                        "  • Create Line by Slope: A tool to create a straight line according to a specific slope",
+                        "  • Check Line: Test the slope of any straight line (according to the scale)",
+                        "  • Line Length: A tool to create a quick report directly on the screen",
+                        "  • Object Length: A tool to write the length of any element (polyline – arc – circle)",
+                        "  • Triangle Area by Length: A small program to calculate the area of a triangle given its three side lengths",
+                        "  • Summary of numbers: A tool to sum any numbers selected by the user",
+                        "  • Total Area: A program to write the area and perimeter of any geometric shape",
+                        "  • Check Area: A program to detect any breaks in any polygon",
+                        "  • Join: Command to join several linear elements into one polyline",
+                        "  • Flip Polyline: A program to reverse the direction of any straight line",
+                        "  • Centroid Polyline: A program to determine the centroid of any closed polygon",
+                        "  • Object To Polyline: Convert any element such as an arc or circle to a polyline",
+                        "  • Divide Object: A program to divide any polygon, circle, or arc into a polyline",
+                        "  • Export Polyline: A program to export polyline points to an external coordinates file",
+                        "  • Export-EG Profile: A very important program to convert the natural ground line of any longitudinal section to an external coordinates file",
+                        "  • Export-FG Profile: A very important program to convert the design line of any longitudinal section to an external coordinates file",
+                        "  • Making Grid: A program to draw a grid according to user-specified spacing",
+                        "  • Insert Points On Grid: A program to place CAD points on any existing grid",
+                        "  • Arabic Text: A program to write in Arabic using the famous XARAB font style",
+                        "  • Surround Text: A distinctive program to create circles or rectangles around texts and numbers",
+                        "  • Auto dimensions: A program to write dimensions for any lines or polygons",
+                        "  • Insert North: A program to insert a north arrow in the drawing",
+                        "  • Insert Scale: A program to write the drawing scale in Arabic or English",
+                        "  • Reduce Levels to 0: A program to convert elevations of any selected elements to zero",
+                        "  • Express Stakeout: A very advanced program to convert any Cartesian coordinates to polar coordinates for stakeout"
+                    ],
+                    howToUse: `<div class="video-placeholder" style="text-align:center; padding:15px; background:#f0f5f0; border-radius:15px;">
+                        <i class="fab fa-youtube" style="font-size:2rem; color:#c9a03d;"></i>
+                        <p style="margin-top:10px;"><strong>📹 Tools Tutorial Video</strong></p>
+                        <p>A tutorial video will be added soon explaining how to use the tools.</p>
+                        <div id="video_placeholder_tools_en" style="margin-top:10px;">
                             <!-- Paste YouTube embed code here -->
                         </div>
                     </div>`
