@@ -1851,12 +1851,11 @@
     <script>
         // تاريخ آخر تحديث للملف (يتغير فقط عند رفع نسخة جديدة)
         document.addEventListener('DOMContentLoaded', function() {
-            const lastModified = new Date(document.lastModified);
-            const dateStr = lastModified.toISOString().split('T')[0];
+            var lastModified = new Date(document.lastModified);
+            var dateStr = lastModified.toISOString().split('T')[0];
             document.getElementById('updateDate').textContent = dateStr;
         });
     </script>
-
 
     <!-- Visitors Statistics Popup Modal -->
     <!-- نافذة الزوار المنبثقة -->
@@ -1882,7 +1881,7 @@
     </div>
 
     <script>
-        // (إغلاق النافذة عند الضغط خارجها (اختياري
+        // إغلاق النافذة عند الضغط خارجها
         window.onclick = function(event) {
             var modal = document.getElementById('visitorsModal');
             if (event.target === modal) {
