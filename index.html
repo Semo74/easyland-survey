@@ -770,6 +770,131 @@
             .tab-btn { padding: 6px 12px; font-size: 0.75rem; }
         }
     </style>
+    <style>
+        /* أنماط نافذة معلومات الشراء */
+        .purchase-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        .purchase-modal.active {
+            display: flex;
+        }
+        .purchase-modal-content {
+            background: white;
+            border-radius: 30px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 35px;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+        .purchase-modal-close {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 1.5rem;
+            background: #2a5a2a;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .purchase-modal-close:hover {
+            background: #c9a03d;
+            color: #1a2a1f;
+        }
+        .purchase-modal h2 {
+            color: #2a5a2a;
+            margin-bottom: 20px;
+            padding-left: 40px;
+        }
+        .purchase-price-box {
+            background: #f0f5f0;
+            border-radius: 15px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-right: 4px solid #c9a03d;
+        }
+        .purchase-price-box p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+        .purchase-price-box .price {
+            font-weight: 700;
+            color: #2a5a2a;
+        }
+        .purchase-offer {
+            background: linear-gradient(135deg, #c9a03d, #b8860b);
+            color: white;
+            border-radius: 15px;
+            padding: 15px 20px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .purchase-offer h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        .purchase-offer .discount {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+        .purchase-license {
+            background: #f9f9f9;
+            border-radius: 15px;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-top: 3px solid #c9a03d;
+        }
+        .purchase-license h4 {
+            color: #2a5a2a;
+            margin-bottom: 10px;
+        }
+        .purchase-license ul {
+            padding-right: 20px;
+            margin: 5px 0;
+        }
+        .purchase-license li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #333;
+        }
+        .purchase-license li i {
+            color: #c9a03d;
+            margin-left: 8px;
+        }
+        .purchase-contact-btn {
+            display: inline-block;
+            background: #2a5a2a;
+            color: #f5e6b8;
+            padding: 10px 25px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+        .purchase-contact-btn:hover {
+            background: #1a3a1a;
+            transform: scale(1.02);
+        }
+    </style>
 </head>
 <body>
     <div class="navbar">
@@ -792,9 +917,10 @@
             <div class="nav-links">
                 <a href="#" data-key="nav_home">الرئيسية</a>
                 <a href="#topography" data-key="nav_topo">الرسم الطبوغرافي</a>
-                <a href="#installation" data-key="nav_install">التثبيت</a>
                 <a href="#parts" data-key="nav_parts">أجزاء البرنامج</a>
+				<a href="#installation" data-key="nav_install">التثبيت</a>
                 <a href="#contact" data-key="nav_contact">تواصل</a>
+				<a href="#developer" data-key="nav_developer">المطور</a>
                 <div class="lang-buttons">
                     <button class="lang-btn" id="langArBtn">🇸🇦 عربي</button>
                     <button class="lang-btn" id="langEnBtn">🇬🇧 English</button>
@@ -1011,9 +1137,7 @@
             </p>
         </div>
         
-        
-        
-        
+
         <!-- نموذج التواصل -->
         <div class="section-title-wrapper" id="contact">
             <h2 class="section-title" data-key="contact_title">📞 تواصل مع فريق الدعم الفني</h2>
@@ -1076,29 +1200,52 @@
 
         </div>
 
-        <!-- ✅ سطر آخر تحديث (قبل زر الزوار مباشرة) -->
+        <!-- أزرار معلومات الشراء والزوار ومشاركة التجربة (بجانب بعض) -->
+        <div style="text-align: center; margin: 10px 0; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <button id="purchaseInfoBtn" style="background: #2a5a2a; color: #f5e6b8; border: none; padding: 10px 25px; border-radius: 30px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <i class="fas fa-shopping-cart"></i> <span data-key="purchase_btn">معلومات الشراء</span>
+            </button>
+            <button id="visitorsBtn" style="background: #2a5a2a; color: #f5e6b8; border: none; padding: 10px 25px; border-radius: 30px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);" onclick="document.getElementById('visitorsModal').style.display='flex'">
+                <i class="fas fa-globe-asia"></i> 🌍 EasyLand Visitors
+            </button>
+              <button id="testimonialBtn" onclick="document.getElementById('testimonialModal').style.display='flex'" style="background: #2a5a2a; color: #f5e6b8; border: none; padding: 10px 25px; border-radius: 30px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+              <i class="fas fa-comment"></i> <span data-key="testimonial_btn">💬 شارك تجربتك</span>
+            </button>
+        </div>
+
+
+        <!-- نافذة مشاركة التجربة -->
+        <div id="testimonialModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 4000; justify-content: center; align-items: center;">
+            <div style="background: white; border-radius: 30px; max-width: 600px; width: 90%; padding: 35px; position: relative;">
+                <button onclick="document.getElementById('testimonialModal').style.display='none'" style="position: absolute; top: 10px; left: 15px; background: #2a5a2a; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 1.2rem; cursor: pointer;">&times;</button>
+                
+				
+       <h3 style="color: #2a5a2a; margin-bottom: 20px; text-align: center;" data-key="testimonial_title">💬 شارك تجربتك مع EasyLand</h3>
+       <form action="https://formspree.io/f/xnjyylgo" method="POST">
+           <div style="margin-bottom: 15px;">
+               <label style="display: block; font-weight: 600; color: #333; margin-bottom: 5px;" data-key="testimonial_name">الاسم</label>
+               <input type="text" name="name" required style="width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #ddd;">
+           </div>
+           <div style="margin-bottom: 15px;">
+               <label style="display: block; font-weight: 600; color: #333; margin-bottom: 5px;" data-key="testimonial_message">تقييمك للبرنامج</label>
+               <textarea name="message" rows="4" required style="width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #ddd;"></textarea>
+           </div>
+           <button type="submit" style="background: #c9a03d; color: #1a2a1f; padding: 12px; border-radius: 40px; border: none; font-weight: 700; width: 100%; cursor: pointer;" data-key="testimonial_submit">إرسال</button>
+       </form>
+            </div>
+        </div>
+
+
+
+        <!-- ✅ سطر آخر تحديث (بعد الأزرار) -->
         <div style="text-align: center; padding: 10px 0; background: #0a2a0a; color: #888; font-size: 0.8rem; border-top: 1px solid rgba(201,160,61,0.2);">
             <i class="fas fa-calendar-alt" style="color: #c9a03d;"></i> 
             Last Update: <strong style="color: #ccc;" id="updateDate">2026-08-07</strong>
         </div>
 
-        <script>
-            // تاريخ آخر تحديث للملف (يتغير فقط عند رفع نسخة جديدة)
-            document.addEventListener('DOMContentLoaded', function() {
-                var lastModified = new Date(document.lastModified);
-                var dateStr = lastModified.toISOString().split('T')[0];
-                document.getElementById('updateDate').textContent = dateStr;
-            });
-        </script>
-        
-        <!-- زر عرض الزوار -->
-        <div style="text-align: center; margin: 20px auto;">
-            <button id="visitorsBtn" style="background: #2a5a2a; color: #f5e6b8; border: none; padding: 8px 20px; border-radius: 30px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);" onclick="document.getElementById('visitorsModal').style.display='flex'">
-                <i class="fas fa-globe-asia"></i> 🌍 EasyLand Visitors
-            </button>
-        </div>
-    </div>
 
+
+    </div>
 
     <!-- Modal for program parts -->
     <div id="partModal" class="modal">
@@ -1108,7 +1255,50 @@
         </div>
     </div>
 
-    <footer class="footer">
+    <!-- نافذة معلومات الشراء المنبثقة -->
+    <div id="purchaseModal" class="purchase-modal">
+        <div class="purchase-modal-content">
+            <div class="purchase-modal-close" id="purchaseModalClose">&times;</div>
+            <h2><span data-key="purchase_title">💲 معلومات الشراء</span></h2>
+            
+            <!-- الأسعار -->
+            <div class="purchase-price-box">
+                <p><span data-key="purchase_topo_price">🗺️ النسخة الطبوغرافية:</span> <span class="price">$800</span></p>
+                <p><span data-key="purchase_full_price">📦 النسخة الكاملة (الباكيج):</span> <span class="price">$1200</span></p>
+            </div>
+
+            <!-- العرض الخاص -->
+            <div class="purchase-offer">
+                <h3>🔥 <span data-key="purchase_offer_title">عرض خاص لمدة محدودة</span></h3>
+                <p><span data-key="purchase_offer_desc">خصم 50% لأول 20 مشترك</span></p>
+                <p class="discount">50% OFF</p>
+                <p style="font-size: 0.9rem; margin-top: 8px; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; display: inline-block;">
+                    🗓️ <span data-key="purchase_offer_start">العرض يبدأ من تاريخ 20-08-2026</span>
+                </p>
+            </div>
+
+            <!-- سياسة الترخيص والحماية -->
+            <div class="purchase-license">
+                <h4>🔒 <span data-key="purchase_license_title">سياسة الترخيص والحماية</span></h4>
+                <ul>
+                    <li><i class="fas fa-microchip"></i> <span data-key="purchase_license_hw">البرنامج محمي بقراءة بيانات الهاردوير (Hardware ID) لجهاز العميل.</span></li>
+                    <li><i class="fas fa-exchange-alt"></i> <span data-key="purchase_license_transfer">ينتهي الترخيص عند تبديل الكمبيوتر.</span></li>
+                    <li><i class="fas fa-gift"></i> <span data-key="purchase_license_free">خلال الـ 6 أشهر الأولى، يحق للعميل طلب ترخيص جديد مجاناً عند تغيير جهازه.</span></li>
+                    <li><i class="fas fa-sync-alt"></i> <span data-key="purchase_license_renew">بعد انتهاء الـ 6 أشهر، يمكن تجديد الترخيص عند الحاجة <strong>مرة واحدة بالسنة</strong> بقيمة رمزية <strong>$100</strong>.</span></li>
+                </ul>
+            </div>
+
+
+	      <!-- زر التواصل -->
+          <div style="text-align: center; margin-top: 20px;">
+              <button id="requestVersionBtn" class="purchase-contact-btn" style="font-size: 1.1rem; padding: 12px 30px;">
+                   <i class="fas fa-shopping-cart"></i> <span data-key="purchase_contact">🛒 اطلب النسخة الآن</span>
+              </button>
+          </div>	
+		</div>
+    </div>
+
+    <footer class="footer" id="developer">
         <div class="container">
             <div class="developer-card">
                 <h3><i class="fas fa-user-cog"></i> <span data-key="developer_title">المصمم والمطور</span></h3>
@@ -1127,7 +1317,7 @@
         // بيانات الترجمة
         const translations = {
             ar: {
-                nav_home: "الرئيسية", nav_topo: "الرسم الطبوغرافي", nav_install: "التثبيت", nav_parts: "أجزاء البرنامج", nav_contact: "تواصل",
+                nav_home: "الرئيسية", nav_topo: "الرسم الطبوغرافي", nav_parts: "أجزاء البرنامج", nav_install: "التثبيت",nav_contact: "تواصل", nav_developer: "المطور",
                 motiv1: "لكل مهندس مساحة أو تقني واجه صعوبة في الرسم المساحي أو تاه بين أوامر Land Desktop و Civil 3D...",
                 motiv2: "لكل من يبحث عن الدقة، السرعة، والتنظيم في أعماله الطبوغرافية والهندسية...",
                 motiv3: "من سوريا إلى العالم العربي...",
@@ -1167,11 +1357,30 @@
                 gallery_title: "معرض صور البرنامج",
                 read_more: "اقرأ المزيد...",
                 trial_title: "تحميل النسخة التجريبية المجانية (7 أيام)",
-				trial_note1: "📌 ملاحظة: النسخة التجريبية مخصصة للقسم الطبوغرافي، المقاطع، وأدوات الطرق.",
+                trial_note1: "📌 ملاحظة: النسخة التجريبية مخصصة للقسم الطبوغرافي، المقاطع، وأدوات الطرق.",
                 trial_note2: "📞 يمكن طلب النسخة الطبوغرافية أو الباكيج الكامل عبر التواصل مع فريق الدعم.",
-            },
+                purchase_btn: "معلومات الشراء",
+                purchase_title: "💲 معلومات الشراء",
+                purchase_topo_price: "🗺️ النسخة الطبوغرافية:",
+                purchase_full_price: "📦 النسخة الكاملة (الباكيج):",
+                purchase_offer_title: "عرض خاص لمدة محدودة",
+                purchase_offer_desc: "خصم 50% لأول 20 مشترك",
+                purchase_offer_start: "العرض يبدأ من تاريخ 11-08-2026",
+                purchase_license_title: "سياسة الترخيص والحماية",
+                purchase_license_hw: "البرنامج محمي بقراءة بيانات الهاردوير (Hardware ID) لجهاز العميل.",
+                purchase_license_transfer: "ينتهي الترخيص عند تبديل الكمبيوتر.",
+                purchase_license_free: "خلال الـ 6 أشهر الأولى، يحق للعميل طلب ترخيص جديد مجاناً عند تغيير جهازه.",
+                purchase_license_renew: "بعد انتهاء الـ 6 أشهر، يمكن تجديد الترخيص عند الحاجة <strong>مرة واحدة بالسنة</strong> بقيمة رمزية <strong>$100</strong>.",
+                purchase_contact: "🛒 اطلب النسخة الآن",
+				testimonial_btn: "💬 شارك تجربتك",
+                testimonial_title: "💬 شارك تجربتك مع EasyLand",
+                testimonial_name: "الاسم",
+                testimonial_message: "تقييمك للبرنامج",
+                testimonial_submit: "إرسال",
+
+			},
             en: {
-                nav_home: "Home", nav_topo: "Topographic", nav_install: "Installation", nav_parts: "Program Parts", nav_contact: "Contact",
+                nav_home: "Home", nav_topo: "Topographic", nav_install: "Installation", nav_parts: "Program Parts", nav_contact: "Contact", nav_developer: "Developer",
                 motiv1: "For every survey engineer or technician who faced difficulties in surveying drawing or got lost between Land Desktop and Civil 3D commands...",
                 motiv2: "For everyone seeking precision, speed, and organization in their topographic and engineering work...",
                 motiv3: "From Syria to the Arab world...",
@@ -1213,8 +1422,26 @@
                 gallery_title: "Program Image Gallery",
                 read_more: "Read more...",
                 trial_title: "Download Your Free 7-Day Trial",
-				trial_note1: "📌 Note: The trial version is dedicated to the topographic section, cross-sections, and road tools.",
+                trial_note1: "📌 Note: The trial version is dedicated to the topographic section, cross-sections, and road tools.",
                 trial_note2: "📞 You can request the topographic version or the full package by contacting our support team.",
+                purchase_btn: "Purchase Info",
+                purchase_title: "💲 Purchase Information",
+                purchase_topo_price: "🗺️ Topographic Version:",
+                purchase_full_price: "📦 Full Package:",
+                purchase_offer_title: "🔥 Limited-Time Special Offer",
+                purchase_offer_desc: "50% discount for the first 20 subscribers",
+                purchase_offer_start: "Offer starts from 11-08-2026",
+                purchase_license_title: "🔒 License & Protection Policy",
+                purchase_license_hw: "The program is protected by reading the client's hardware ID.",
+                purchase_license_transfer: "The license expires when the computer is changed.",
+                purchase_license_free: "During the first 6 months, the client can request a new license for free when changing their device.",
+                purchase_license_renew: "After 6 months, the license can be renewed when needed <strong>once per year</strong> for a nominal fee of <strong>$100</strong>.",
+                purchase_contact: "🛒 Order Now",
+                testimonial_btn: "💬 Share Your Experience",
+                testimonial_title: "💬 Share Your Experience with EasyLand",
+                testimonial_name: "Name",
+                testimonial_message: "Your Feedback",
+                testimonial_submit: "Send",
             }
         };
 
@@ -1681,6 +1908,31 @@
         let modal = document.getElementById('partModal');
         let modalBody = document.getElementById('modalBody');
         let modalClose = document.querySelector('.modal-close');
+
+        // نافذة معلومات الشراء
+        const purchaseModal = document.getElementById('purchaseModal');
+        const purchaseBtn = document.getElementById('purchaseInfoBtn');
+        const purchaseClose = document.getElementById('purchaseModalClose');
+        const purchaseContactLink = document.getElementById('purchaseContactLink');
+
+        if (purchaseBtn && purchaseModal && purchaseClose) {
+            purchaseBtn.onclick = function() {
+                purchaseModal.classList.add('active');
+            };
+            purchaseClose.onclick = function() {
+                purchaseModal.classList.remove('active');
+            };
+            window.addEventListener('click', function(e) {
+                if (e.target === purchaseModal) {
+                    purchaseModal.classList.remove('active');
+                }
+            });
+            if (purchaseContactLink) {
+                purchaseContactLink.onclick = function() {
+                    purchaseModal.classList.remove('active');
+                };
+            }
+        }
 
         function renderTopoTabs() {
             const items = currentLang === 'ar' ? tabItems.ar : tabItems.en;
