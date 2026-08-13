@@ -1200,7 +1200,7 @@
 
         </div>
 
-        <!-- أزرار معلومات الشراء والزوار ومشاركة التجربة (بجانب بعض) -->
+        <!-- (أزرار معلومات الشراء والزوار ومشاركة التجربة والمراجع (بجانب بعض -->
         <div style="text-align: center; margin: 10px 0; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
             <button id="purchaseInfoBtn" style="background: #2a5a2a; color: #f5e6b8; border: none; padding: 10px 25px; border-radius: 30px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                 <i class="fas fa-shopping-cart"></i> <span data-key="purchase_btn">معلومات الشراء</span>
@@ -1208,11 +1208,13 @@
             <button id="visitorsBtn" style="background: #2a5a2a; color: #f5e6b8; border: none; padding: 10px 25px; border-radius: 30px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);" onclick="document.getElementById('visitorsModal').style.display='flex'">
                 <i class="fas fa-globe-asia"></i> 🌍 EasyLand Visitors
             </button>
-              <button id="testimonialBtn" onclick="document.getElementById('testimonialModal').style.display='flex'" style="background: #2a5a2a; color: #f5e6b8; border: none; padding: 10px 25px; border-radius: 30px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-              <i class="fas fa-comment"></i> <span data-key="testimonial_btn">💬 شارك تجربتك</span>
+            <button id="testimonialBtn" onclick="document.getElementById('testimonialModal').style.display='flex'" style="background: #2a5a2a; color: #f5e6b8; border: none; padding: 10px 25px; border-radius: 30px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <i class="fas fa-comment"></i> <span data-key="testimonial_btn">💬 شارك تجربتك</span>
             </button>
+            <a href="Note Book.pdf" download style="background: #2a5a2a; color: #f5e6b8; padding: 10px 25px; border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.2s; border: 1px solid #c9a03d; font-family: 'Cairo', sans-serif; font-size: 0.9rem;">
+                <i class="fas fa-file-pdf"></i> 📥 Note Book
+            </a>
         </div>
-
 
         <!-- نافذة مشاركة التجربة -->
         <div id="testimonialModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 4000; justify-content: center; align-items: center;">
@@ -1240,7 +1242,7 @@
         <!-- ✅ سطر آخر تحديث (بعد الأزرار) -->
         <div style="text-align: center; padding: 10px 0; background: #0a2a0a; color: #888; font-size: 0.8rem; border-top: 1px solid rgba(201,160,61,0.2);">
             <i class="fas fa-calendar-alt" style="color: #c9a03d;"></i> 
-            Last Update: <strong style="color: #ccc;" id="updateDate">2026-08-011</strong>
+            Last Update: <strong style="color: #ccc;" id="updateDate">2026-08-11</strong>
         </div>
 
 
@@ -2131,6 +2133,9 @@
             </p>
         </div>
     </div>
+
+
+
 
     <script>
         // إغلاق النافذة عند الضغط خارجها
