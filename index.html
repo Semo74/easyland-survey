@@ -920,6 +920,7 @@
                 <a href="#parts" data-key="nav_parts">أجزاء البرنامج</a>
 				<a href="#installation" data-key="nav_install">التثبيت</a>
                 <a href="#contact" data-key="nav_contact">تواصل</a>
+				<a href="#" id="navPurchaseBtn" data-key="nav_purchase">عروض</a>
 				<a href="#developer" data-key="nav_developer">المطور</a>
                 <div class="lang-buttons">
                     <button class="lang-btn" id="langArBtn">🇸🇦 عربي</button>
@@ -1216,6 +1217,16 @@
             </a>
         </div>
 
+
+
+		<script>
+    // ربط زر التنقل بنافذة الشراء
+    document.getElementById('navPurchaseBtn').addEventListener('click', function(e) {
+        e.preventDefault(); // منع الرابط من التحرك لأعلى الصفحة
+        document.getElementById('purchaseModal').classList.add('active');
+    });
+</script>
+
         <!-- نافذة مشاركة التجربة -->
         <div id="testimonialModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 4000; justify-content: center; align-items: center;">
             <div style="background: white; border-radius: 30px; max-width: 600px; width: 90%; padding: 35px; position: relative;">
@@ -1370,10 +1381,10 @@
                 purchase_btn: "معلومات الشراء",
                 purchase_title: "💲 معلومات الشراء",
                 purchase_topo_price: "🗺️ النسخة الطبوغرافية:",
-                purchase_full_price: "📦 النسخة الكاملة (الباكيج):",
+                purchase_full_price: "📦 (النسخة الكاملة (الباكيج:",
                 purchase_offer_title: "عرض خاص لمدة محدودة",
                 purchase_offer_desc: "خصم 50% لأول 20 مشترك",
-                purchase_offer_start: "العرض يبدأ من تاريخ 11-08-2026",
+                purchase_offer_end: "ينتهي العرض في 11-09-2026",
                 purchase_license_title: "سياسة الترخيص والحماية",
                 purchase_license_hw: "البرنامج محمي بقراءة بيانات الهاردوير (Hardware ID) لجهاز العميل.",
                 purchase_license_transfer: "ينتهي الترخيص عند تبديل الكمبيوتر.",
@@ -1385,6 +1396,7 @@
                 testimonial_name: "الاسم",
                 testimonial_message: "تقييمك للبرنامج",
                 testimonial_submit: "إرسال",
+				nav_purchase: "عروض",
 
 			},
             en: {
@@ -1438,7 +1450,7 @@
                 purchase_full_price: "📦 Full Package:",
                 purchase_offer_title: "🔥 Limited-Time Special Offer",
                 purchase_offer_desc: "50% discount for the first 20 subscribers",
-                purchase_offer_start: "Offer starts from 11-08-2026",
+                purchase_offer_end: "Offer ends on 11-09-2026",
                 purchase_license_title: "🔒 License & Protection Policy",
                 purchase_license_hw: "The program is protected by reading the client's hardware ID.",
                 purchase_license_transfer: "The license expires when the computer is changed.",
@@ -1450,6 +1462,7 @@
                 testimonial_name: "Name",
                 testimonial_message: "Your Feedback",
                 testimonial_submit: "Send",
+				nav_purchase: "Offers",
             }
         };
 
